@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document: Todo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  </head>
+  <body>
+    <div class="todo">
+      <div class="container">
+        <header class="todo__header">
+          <div class="overflow">
+            <p>Welcome to our page!</p>
+            <button id="btn-login" disabled="true" onclick="login()">Log in</button>
+            <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+            <h1><span id="todaysDay">Monday</span>'s Todos</h1>
+            <span id="todaysDate">December 30, 2020</span>
+          </div>
+        </header>
+        <div class="todo__input wrap">
+          <form action="" id="form">
+            <input type="text" id="todoInput" placeholder="Enter a Todo" />
+            <button class="todo__btn">Add</button>
+          </form>
+        </div>
+        <ul class="todo__list wrap"></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+    <script src="js/app.js"></script>
+
+  </body>
+</html>
