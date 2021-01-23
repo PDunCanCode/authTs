@@ -22,17 +22,32 @@ const updateUI = async () => {
   document.getElementById("btn-logout").disabled = !isAuthenticated;
   document.getElementById("btn-login").disabled = isAuthenticated;
 
-  const query = window.location.search;
-  if (query.includes("code=") && query.includes("state=")) {
-    // Process the login state
-    await auth0.handleRedirectCallback();
+  if (isAuthenticated) {
+    document.getElementById("gated-content").classList.remove("hidden");
 
-    updateUI();
+    document.getElementById(
+      "ipt-access-token"
+    ).innerHTML = await auth0.getTokenSilently();
 
-    // Use replaceState to redirect the user away and remove the querystring parameters
-    window.history.replaceState({}, document.title, "/");
+    document.getElementById("ipt-user-profile").textContent = JSON.stringify(
+      await auth0.getUser()
+    );
+  } else {
+    document.getElementById("gated-content").classList.add("hidden");
   }
 };
+
+const query = window.location.search;
+if (query.includes("code=") && query.includes("state=")) {
+  // Process the login state
+  await auth0.handleRedirectCallback();
+
+  updateUI();
+
+  // Use replaceState to redirect the user away and remove the querystring parameters
+  window.history.replaceState({}, document.title, "/");
+}
+
 // ..
 
 const login = async () => {
