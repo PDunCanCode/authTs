@@ -25,28 +25,28 @@
             <span id="todaysDate">December 30, 2020</span>
           </div>
         </header>
+      </div>
+      <div class="hidden" id="gated-content">
         <div class="todo__input wrap">
           <form action="" id="form">
             <input type="text" id="todoInput" placeholder="Enter a Todo" />
             <button class="todo__btn">Add</button>
           </form>
+          <p>
+            You're seeing this content because you're currently
+            <strong>logged in</strong>.
+          </p>
+          <label>
+            Access token:
+            <pre id="ipt-access-token"></pre>
+          </label>
+          <label>
+            User profile:
+            <pre id="ipt-user-profile"></pre>
+          </label>
         </div>
         <ul class="todo__list wrap"></ul>
       </div>
-    </div>
-    <div class="hidden" id="gated-content">
-      <p>
-        You're seeing this content because you're currently
-        <strong>logged in</strong>.
-      </p>
-      <label>
-        Access token:
-        <pre id="ipt-access-token"></pre>
-      </label>
-      <label>
-        User profile:
-        <pre id="ipt-user-profile"></pre>
-      </label>
     </div>
     <script src="script.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
