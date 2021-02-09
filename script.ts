@@ -73,7 +73,6 @@ const logout = () => {
   });
 };
 
-
 const days: string[] = [
   "Sunday",
   "Monday",
